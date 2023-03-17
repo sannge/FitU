@@ -46,37 +46,4 @@ const HomePage = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    resizeMode: "cover",
-  },
-  header: {
-    height: 50,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    justifyContent: "center",
-    alignItems: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: "#e6e6e6",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#fff",
-  },
-  content: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-    backgroundColor: "rgba(0, 0, 0, 0.3)",
-  },
-  description: {
-    fontSize: 18,
-    marginBottom: 20,
-    textAlign: "center",
-    color: "#fff",
-  },
-});
-
 export default HomePage;

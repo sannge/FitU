@@ -7,8 +7,8 @@ import { theme } from "./NativeBaseTheme";
 
 function App() {
   return (
-    <NavigationContainer theme={theme}>
-      <NativeBaseProvider>
+    <NavigationContainer>
+      <NativeBaseProvider theme={theme}>
         <Provider store={store}>
           <Layout />
         </Provider>

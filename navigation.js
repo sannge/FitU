@@ -7,12 +7,17 @@ import MoreScreen from "./screens/main-screens/MoreScreen";
 import WorkoutScreen from "./screens/main-screens/WorkoutScreen";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { theme } from "./NativeBaseTheme";
+import CoachesScreen from "./screens/main-screens/CoachesScreen";
 
 const Tab = createBottomTabNavigator();
-const RoutineStack = createStackNavigator();
-const WorkoutStack = createStackNavigator();
+const Stack = createStackNavigator();
+
 const FastingStack = createStackNavigator();
 const MoreStack = createStackNavigator();
+const RoutineStack = createStackNavigator();
+const WorkoutStack = createStackNavigator();
+
+const CoachStack = createStackNavigator();
 
 const options = {
   headerShown: false,
@@ -49,10 +54,15 @@ const RoutineStackScreen = () => {
   return (
     <RoutineStack.Navigator>
       <RoutineStack.Screen
-        name="RoutineStack"
+        name="RoutineScreen"
         options={options}
         component={RoutineScreen}
       />
+      {/* <RoutineStack.Screen
+        name="CoachesScreen"
+        options={options}
+        component={CoachesScreen}
+      /> */}
     </RoutineStack.Navigator>
   );
 };
@@ -93,7 +103,7 @@ const MoreStackScreen = () => {
   );
 };
 
-const RootNavigator = () => {
+const TabNavigator = () => {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
@@ -113,6 +123,31 @@ const RootNavigator = () => {
       />
       <Tab.Screen name="More" options={options} component={MoreStackScreen} />
     </Tab.Navigator>
+  );
+};
+
+const CoachStackScreen = () => {
+  return (
+    <CoachStack.Navigator>
+      <CoachStack.Screen
+        name="CoachesScreen"
+        options={options}
+        component={CoachesScreen}
+      />
+    </CoachStack.Navigator>
+  );
+};
+
+const RootNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="TabNavigator"
+        component={TabNavigator}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name="CoachStack" component={CoachStackScreen} />
+    </Stack.Navigator>
   );
 };
 

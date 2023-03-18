@@ -1,6 +1,7 @@
 import React from "react";
 import { useSafeArea, Box, Flex } from "native-base";
 import RootNavigator from "./navigation";
+import { theme } from "./NativeBaseTheme";
 
 const Layout = () => {
   const safeAreaProps = useSafeArea({
@@ -10,7 +11,11 @@ const Layout = () => {
   });
 
   return (
-    <Box flex={1} {...safeAreaProps}>
+    <Box
+      flex={1}
+      {...safeAreaProps}
+      // bg={theme.colors.backgroundColor["500"]}
+    >
       <RootNavigator />
     </Box>
   );

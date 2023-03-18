@@ -1,19 +1,17 @@
-import { Text } from "react-native";
 import React from "react";
-import { useSafeArea, Box, Container } from "native-base";
+import { useSafeArea, Box, Flex } from "native-base";
+import RootNavigator from "./navigation";
 
 const Layout = () => {
   const safeAreaProps = useSafeArea({
     safeAreaTop: true,
     pt: 2,
+    pb: 2,
   });
 
   return (
-    <Box {...safeAreaProps}>
-      <Container>
-        <Text>Open up App.js to start working on your app!</Text>
-        {/* <HomeScreen /> */}
-      </Container>
+    <Box flex={1} {...safeAreaProps}>
+      <RootNavigator />
     </Box>
   );
 };
